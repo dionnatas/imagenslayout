@@ -1,0 +1,34 @@
+{
+  "locais": [
+    {
+      "imagem": "@drawable/sao_paulo_sp",
+      "local": "São Paulo",
+      "descricao": "Cidade de São Paulo, etc, etc, etc......"
+    },
+    {
+      "imagem": "@drawable/salvador_ba",
+      "local": "Salvador",
+      "descricao": "Cidade de Salvador, etc, etc, etc......"
+    },
+    {
+      "imagem": "@drawable/rio_de_janeiro_rj",
+      "local": "Rio de Janeiro",
+      "descricao": "Cidade do Rio de Janeiro, etc, etc, etc......"
+    },
+    {
+      "imagem": "@drawable/recife_pe",
+      "local": "Recife",
+      "descricao": "Cidade de Recife, etc, etc, etc......"
+    },
+    {
+      "imagem": "@drawable/foz_do_iguacu_pr",
+      "local": "Foz do Iguaçu",
+      "descricao": "Cidade de Foz do Iguaçu, etc, etc, etc......"
+    },
+    {
+      "imagem": "@drawable/belo_horizonte_mg",
+      "local": "Belo Horizonte",
+      "descricao": "Cidade de Foz de Belo Horizonte, etc, etc, etc......"
+    }
+  ]
+}
