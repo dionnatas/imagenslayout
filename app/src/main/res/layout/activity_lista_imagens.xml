@@ -36,8 +36,10 @@
         app:layout_constraintVertical_bias="0.02" />
 
     <ListView
+        android:id="@+id/lista_imagens_listview"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        tools:listitem="@layout/item_lista_imagens"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageView"
