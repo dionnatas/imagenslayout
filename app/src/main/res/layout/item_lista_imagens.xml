@@ -1,60 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintlayout_principal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/img_local"
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_img_local"
         android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:scaleType="centerCrop"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:src="@sample/locais.json/locais/imagem"
-        />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/nome_local"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:background="@android:drawable/screen_background_dark_transparent"
-        android:padding="8dp"
-        tools:text="@sample/locais.json/locais/local"
-        android:textColor="@android:color/white"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/img_local"
-        app:layout_constraintEnd_toEndOf="@id/img_local"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@id/img_local"
-        app:layout_constraintTop_toTopOf="@id/img_local"
-        app:layout_constraintVertical_bias="1.0" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintlayout_cardview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <View
-        android:id="@+id/item_img_divisor"
-        android:layout_width="0dp"
-        android:layout_height="3dp"
-        android:background="@android:color/holo_orange_dark"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img_local" />
+            <ImageView
+                android:id="@+id/img_local"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="24dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@sample/locais.json/locais/imagem" />
 
-    <TextView
-        android:id="@+id/descricao_local"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="@sample/locais.json/locais/descricao"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/item_img_divisor"
-        app:layout_constraintVertical_bias="@android:integer/config_longAnimTime" />
+            <TextView
+                android:id="@+id/nome_local"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@android:drawable/screen_background_dark_transparent"
+                android:padding="8dp"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/item_img_divisor"
+                app:layout_constraintEnd_toStartOf="@id/cardview_img_local"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardview_img_local"
+                tools:text="@sample/locais.json/locais/local" />
+
+            <View
+                android:id="@+id/item_img_divisor"
+                android:layout_width="0dp"
+                android:layout_height="3dp"
+                android:layout_marginBottom="24dp"
+                android:background="@android:color/holo_orange_dark"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/descricao_local"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/item_img_divisor"
+                app:layout_constraintTop_toBottomOf="@id/item_img_divisor"
+                tools:text="@sample/locais.json/locais/descricao" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
