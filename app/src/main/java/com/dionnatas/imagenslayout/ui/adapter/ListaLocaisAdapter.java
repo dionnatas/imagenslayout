@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.dionnatas.imagenslayout.R;
 import com.dionnatas.imagenslayout.model.Local;
+import com.dionnatas.imagenslayout.ui.ResourceUtils;
 
 import java.util.List;
 
@@ -60,10 +61,8 @@ public class ListaLocaisAdapter extends BaseAdapter {
 
     private void mostraImagem(View viewCriada, Local locals) {
         ImageView imagem = viewCriada.findViewById(R.id.img_local);
-        Resources resources = context.getResources();
-        int idDoDrawable = resources.getIdentifier(locals.getImagem(), "drawable", context.getPackageName());
-        Drawable drawableimagemlocal = resources.getDrawable(idDoDrawable);
-        imagem.setImageDrawable(drawableimagemlocal);
+        Drawable drawableImagem =  ResourceUtils.devolveDrawable(context, locals.getImagem());
+        imagem.setImageDrawable(drawableImagem);
     }
 
     private void mostraLocal(View viewCriada, Local locals) {
