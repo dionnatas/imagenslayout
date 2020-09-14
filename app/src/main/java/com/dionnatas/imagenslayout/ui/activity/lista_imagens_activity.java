@@ -7,7 +7,7 @@ import android.widget.ListView;
 
 import com.dionnatas.imagenslayout.R;
 import com.dionnatas.imagenslayout.dao.PacoteDAO;
-import com.dionnatas.imagenslayout.model.Pacotes;
+import com.dionnatas.imagenslayout.model.Local;
 import com.dionnatas.imagenslayout.ui.adapter.ListaLocaisAdapter;
 
 import java.util.List;
@@ -21,7 +21,7 @@ public class lista_imagens_activity extends AppCompatActivity {
         setTitle("Imagens");
         ListView listaDeLocais = findViewById(R.id.lista_imagens_listview);
 
-        List<Pacotes> locais = new PacoteDAO().lista();
+        List<Local> locais = new PacoteDAO().lista();
 
         listaDeLocais.setAdapter(new ListaLocaisAdapter(locais, this));
     }

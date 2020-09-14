@@ -1,35 +1,39 @@
 package com.dionnatas.imagenslayout.ui.adapter;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.dionnatas.imagenslayout.R;
-import com.dionnatas.imagenslayout.model.Pacotes;
+import com.dionnatas.imagenslayout.model.Local;
 
 import java.util.List;
 
 public class ListaLocaisAdapter extends BaseAdapter {
 
-    private final List<Pacotes> pacotes;
+    private final List<Local> locais;
     private Context context;
 
-    public ListaLocaisAdapter (List<Pacotes> pacotes, Context context){
+    public ListaLocaisAdapter(List<Local> locais, Context context) {
 
-        this.pacotes = pacotes;
+        this.locais = locais;
         this.context = context;
     }
 
     @Override
     public int getCount() {
-        return pacotes.size();
+        return locais.size();
     }
 
     @Override
-    public Pacotes getItem(int posicao) {
-        return pacotes.get(posicao);
+    public Local getItem(int posicao) {
+        return locais.get(posicao);
     }
 
     @Override
@@ -38,8 +42,19 @@ public class ListaLocaisAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-       View viewCriada = LayoutInflater.from(context).inflate(R.layout.item_lista_imagens, viewGroup, false);
+    public View getView(int posicao, View view, ViewGroup viewGroup) {
+        View viewCriada = LayoutInflater.from(context).inflate(R.layout.item_lista_imagens, viewGroup, false);
+
+        Local locals = locais.get(posicao);
+        TextView local = viewCriada.findViewById(R.id.nome_local);
+        local.setText(locals.getLocal());
+        ImageView imagem = viewCriada.findViewById(R.id.img_local);
+        Resources resources = context.getResources();
+        int idDoDrawable = resources.getIdentifier(locals.getImagem(), "drawable", context.getPackageName());
+        Drawable drawableimagemlocal = resources.getDrawable(idDoDrawable);
+        imagem.setImageDrawable(drawableimagemlocal);
+        TextView desc = viewCriada.findViewById(R.id.descricao_local);
+        desc.setText(locals.getDescricao());
         return viewCriada;
     }
 }
