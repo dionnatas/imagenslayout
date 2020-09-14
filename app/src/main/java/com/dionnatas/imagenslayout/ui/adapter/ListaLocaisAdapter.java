@@ -18,7 +18,7 @@ import java.util.List;
 public class ListaLocaisAdapter extends BaseAdapter {
 
     private final List<Local> locais;
-    private Context context;
+    private final Context context;
 
     public ListaLocaisAdapter(List<Local> locais, Context context) {
 
@@ -46,15 +46,28 @@ public class ListaLocaisAdapter extends BaseAdapter {
         View viewCriada = LayoutInflater.from(context).inflate(R.layout.item_lista_imagens, viewGroup, false);
 
         Local locals = locais.get(posicao);
-        TextView local = viewCriada.findViewById(R.id.nome_local);
-        local.setText(locals.getLocal());
+        mostraLocal(viewCriada, locals);
+        mostraImagem(viewCriada, locals);
+        mostraDescricao(viewCriada, locals);
+
+        return viewCriada;
+    }
+
+    private void mostraDescricao(View viewCriada, Local locals) {
+        TextView desc = viewCriada.findViewById(R.id.descricao_local);
+        desc.setText(locals.getDescricao());
+    }
+
+    private void mostraImagem(View viewCriada, Local locals) {
         ImageView imagem = viewCriada.findViewById(R.id.img_local);
         Resources resources = context.getResources();
         int idDoDrawable = resources.getIdentifier(locals.getImagem(), "drawable", context.getPackageName());
         Drawable drawableimagemlocal = resources.getDrawable(idDoDrawable);
         imagem.setImageDrawable(drawableimagemlocal);
-        TextView desc = viewCriada.findViewById(R.id.descricao_local);
-        desc.setText(locals.getDescricao());
-        return viewCriada;
+    }
+
+    private void mostraLocal(View viewCriada, Local locals) {
+        TextView local = viewCriada.findViewById(R.id.nome_local);
+        local.setText(locals.getLocal());
     }
 }

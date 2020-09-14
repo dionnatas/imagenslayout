@@ -14,15 +14,19 @@ import java.util.List;
 
 public class lista_imagens_activity extends AppCompatActivity {
 
+    public static final String TITULO_APPBAR = "Imagens";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_imagens);
-        setTitle("Imagens");
+        setTitle(TITULO_APPBAR);
+        configuraLista();
+    }
+
+    private void configuraLista() {
         ListView listaDeLocais = findViewById(R.id.lista_imagens_listview);
-
         List<Local> locais = new PacoteDAO().lista();
-
         listaDeLocais.setAdapter(new ListaLocaisAdapter(locais, this));
     }
 }
