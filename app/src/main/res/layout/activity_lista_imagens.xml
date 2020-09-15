@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activity.lista_imagens_activity">
+    android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/bannerInicial"
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:layout_marginBottom="8dp"
+        android:contentDescription="@string/banner_laranja"
         app:layout_constraintBottom_toBottomOf="@+id/txt_titulo_pagina"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:color/holo_orange_dark" />
+        app:srcCompat="@color/colorPrimary" />
 
     <TextView
         android:id="@+id/txt_titulo_pagina"
@@ -38,12 +38,11 @@
         android:id="@+id/lista_imagens_listview"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        tools:listitem="@layout/item_lista_imagens"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView"
+        android:divider="@null"
         app:layout_constraintBottom_toBottomOf="parent"
-
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bannerInicial"
+        tools:listitem="@layout/item_lista_imagens" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
